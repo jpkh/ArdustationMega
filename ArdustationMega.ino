@@ -3,6 +3,9 @@
 //
 // Special thanks go to the ArduPilot and Mavlink dev teams and Michael Smith
 
+#define JDDEV            // jDrones development
+
+
 // AVR runtime
 #include <avr/io.h>
 #include <avr/eeprom.h>
@@ -10,8 +13,14 @@
 #include <math.h>
 
 // Mavlink libraries - Path requires updating per install
+#ifndef JDDEV
 #include "C:/Users/Colin/Documents/Arduino/ArduStation/ArdustationMega/mavlink/v1.0/ardupilotmega/mavlink.h"
 #include "C:/Users/Colin/Documents/Arduino/ArduStation/ArdustationMega/mavlink/v1.0/common/common.h"
+#else
+#include "Z:\Repositories\ArdustationMega\mavlink\v1.0\ardupilotmega\mavlink.h"
+#include "Z:\Repositories\ArdustationMega\mavlink\v1.0\common\common.h"
+
+#fi
 
 // Arduino Libraries
 #include <Servo.h>
@@ -29,11 +38,21 @@
 // LCD Includes
 #include "glcd.h"
 #include "fonts/allFonts.h"
+
+#ifndef JDDEV
 #include "C:/Users/Colin/Documents/Arduino/ArduStation/ArdustationMega/bitmaps/icon_altitude_small.h"
 #include "C:/Users/Colin/Documents/Arduino/ArduStation/ArdustationMega/bitmaps/sat.h"
 #include "C:/Users/Colin/Documents/Arduino/ArduStation/ArdustationMega/bitmaps/icn_conn.h"
 #include "C:/Users/Colin/Documents/Arduino/ArduStation/ArdustationMega/bitmaps/icn_batt.h"
 #include "C:/Users/Colin/Documents/Arduino/ArduStation/ArdustationMega/bitmaps/icn_speed.h"
+#else
+#include "Z:\Repositories\ArdustationMega\bitmaps\icon_altitude_small.h"
+#include "Z:\Repositories\ArdustationMega\bitmaps\sat.h"
+#include "Z:\Repositories\ArdustationMega\bitmaps\icn_conn.h"
+#include "Z:\Repositories\ArdustationMega\bitmaps\icn_batt.h"
+#include "Z:\Repositories\ArdustationMega\bitmaps\icn_speed.h"
+#fi
+
 
 // Local modules
 #include "GCS.h"                // Controls the ground station comms
