@@ -3,8 +3,8 @@
 //
 // Special thanks go to the ArduPilot and Mavlink dev teams and Michael Smith
 
-#define JDDEV            // jDrones development
 
+#define JDDEV            // jDrones development
 
 // AVR runtime
 #include <avr/io.h>
@@ -19,8 +19,7 @@
 #else
 #include "Z:\Repositories\ArdustationMega\mavlink\v1.0\ardupilotmega\mavlink.h"
 #include "Z:\Repositories\ArdustationMega\mavlink\v1.0\common\common.h"
-
-#fi
+#endif
 
 // Arduino Libraries
 #include <Servo.h>
@@ -51,7 +50,7 @@
 #include "Z:\Repositories\ArdustationMega\bitmaps\icn_conn.h"
 #include "Z:\Repositories\ArdustationMega\bitmaps\icn_batt.h"
 #include "Z:\Repositories\ArdustationMega\bitmaps\icn_speed.h"
-#fi
+#endif
 
 
 // Local modules
